@@ -1,0 +1,4 @@
+/bsp_stm32/build
+/bsp_stm32f4/Debug
+/bsp_stm32f4/build
+bsp_stm32f4/.vscode/BROWSE*

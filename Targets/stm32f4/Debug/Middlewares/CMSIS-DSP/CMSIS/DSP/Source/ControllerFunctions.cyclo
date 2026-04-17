@@ -1,0 +1,8 @@
+C:/Users/evgeny/STM32Cube/Repository/Packs/ARM/CMSIS-DSP/1.17.0/Source/ControllerFunctions/arm_pid_init_f32.c:53:24:arm_pid_init_f32	2
+C:/Users/evgeny/STM32Cube/Repository/Packs/ARM/CMSIS-DSP/1.17.0/Source/ControllerFunctions/arm_pid_init_q15.c:53:24:arm_pid_init_q15	2
+C:/Users/evgeny/STM32Cube/Repository/Packs/ARM/CMSIS-DSP/1.17.0/Source/ControllerFunctions/arm_pid_init_q31.c:53:24:arm_pid_init_q31	2
+C:/Users/evgeny/STM32Cube/Repository/Packs/ARM/CMSIS-DSP/1.17.0/Source/ControllerFunctions/arm_pid_reset_f32.c:47:24:arm_pid_reset_f32	1
+C:/Users/evgeny/STM32Cube/Repository/Packs/ARM/CMSIS-DSP/1.17.0/Source/ControllerFunctions/arm_pid_reset_q15.c:47:24:arm_pid_reset_q15	1
+C:/Users/evgeny/STM32Cube/Repository/Packs/ARM/CMSIS-DSP/1.17.0/Source/ControllerFunctions/arm_pid_reset_q31.c:47:24:arm_pid_reset_q31	1
+C:/Users/evgeny/STM32Cube/Repository/Packs/ARM/CMSIS-DSP/1.17.0/Source/ControllerFunctions/arm_sin_cos_f32.c:47:24:arm_sin_cos_f32	3
+C:/Users/evgeny/STM32Cube/Repository/Packs/ARM/CMSIS-DSP/1.17.0/Source/ControllerFunctions/arm_sin_cos_q31.c:53:24:arm_sin_cos_q31	3
