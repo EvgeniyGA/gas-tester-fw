@@ -1,3 +1,0 @@
-../Core/Src/dac_driver.c:6:5:dac_start	32	static
-../Core/Src/dac_driver.c:25:13:HAL_DAC_ConvCpltCallbackCh1	16	static
-../Core/Src/dac_driver.c:28:13:HAL_DAC_ConvHalfCpltCallbackCh1	16	static
