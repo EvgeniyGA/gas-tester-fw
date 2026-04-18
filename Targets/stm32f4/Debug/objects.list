@@ -1,3 +1,8 @@
+"./App/Src/app.o"
+"./App/Src/process_adc.o"
+"./App/Src/wave_gen.o"
+"./App/Src/wave_measure.o"
+"./App/Src/wave_starter.o"
 "./Core/Src/adc.o"
 "./Core/Src/adc_driver.o"
 "./Core/Src/can.o"

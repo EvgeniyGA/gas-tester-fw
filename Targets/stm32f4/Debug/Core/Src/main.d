@@ -50,42 +50,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
- ../../../App/Inc/process_adc.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math_types.h \
- C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/CMSIS/Include/cmsis_compiler.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math_memory.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/none.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math_types.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/utils.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/basic_math_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math_memory.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/none.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/utils.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/interpolation_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/bayes_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/statistics_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/basic_math_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/fast_math_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/matrix_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/complex_math_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/statistics_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/controller_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/support_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/distance_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/matrix_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/svm_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/svm_defines.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/fast_math_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/transform_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/complex_math_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/filtering_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/support_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/quaternion_math_functions.h \
- C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/window_functions.h \
- ../../../App/Inc/wave_gen.h ../../../App/Inc/wave_starter.h \
- ../../../App/Inc/wave_gen.h ../../../App/Inc/app.h
+ C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
 ../Core/Inc/main.h:
 C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -147,40 +112,3 @@ C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM3
 C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
-../../../App/Inc/process_adc.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math_types.h:
-C:/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/CMSIS/Include/cmsis_compiler.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math_memory.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/none.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math_types.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/utils.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/basic_math_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/arm_math_memory.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/none.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/utils.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/interpolation_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/bayes_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/statistics_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/basic_math_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/fast_math_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/matrix_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/complex_math_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/statistics_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/controller_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/support_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/distance_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/matrix_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/svm_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/svm_defines.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/fast_math_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/transform_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/complex_math_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/filtering_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/support_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/quaternion_math_functions.h:
-C:/Users/evgeny/STM32Cube/Repository//Packs/ARM/CMSIS-DSP/1.17.0/Include/dsp/window_functions.h:
-../../../App/Inc/wave_gen.h:
-../../../App/Inc/wave_starter.h:
-../../../App/Inc/wave_gen.h:
-../../../App/Inc/app.h:
