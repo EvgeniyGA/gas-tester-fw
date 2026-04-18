@@ -32,10 +32,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usbd_cdc_if.h"
-#include "process_adc.h"
-#include "arm_math.h"
-#include "wave_gen.h"
-#include "wave_starter.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,7 +52,19 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+int _write(int fd, char *ptr, int len) {
+    HAL_StatusTypeDef hstatus;
 
+    if (fd == 1 || fd == 2) {
+        //hstatus = HAL_UART_Transmit(&huart1, (uint8_t*) ptr, len, HAL_MAX_DELAY);
+        hstatus = CDC_Transmit_FS((uint8_t*) ptr, len);
+        if (hstatus == HAL_OK)
+            return len;
+        else
+            return -1;
+    }
+    return -1;
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
