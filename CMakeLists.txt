@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(aero-tester-f4 LANGUAGES C CXX ASM)
+project(gas-tester LANGUAGES C CXX ASM)
 
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/Targets/stm32f4/cmake/toolchain-arm-none-eabi.cmake")
 
@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)  # для VSCode
 set(TARGET stm32f4)
 
-set(MAIN_EXECUTABLE "aero-tester-f4")
+set(MAIN_EXECUTABLE "gas-tester")
 add_executable(${MAIN_EXECUTABLE})
 
 file(GLOB_RECURSE APP_SOURCES 
