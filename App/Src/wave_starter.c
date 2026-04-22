@@ -10,7 +10,7 @@
 uint16_t dac_dma_buff[WAVE_TIME_RESOLUTION];
 
 int wave_starter_init(waveGenConfig_s* config){
-	config->amplitude = 1.5;
+	config->amplitude = 1.3;
 	config->midpoint = 1.5;
 	config->buf = dac_dma_buff;
 	config->dac_resolution = 12;

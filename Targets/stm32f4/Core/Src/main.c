@@ -95,7 +95,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  init();
   /* USER CODE END Init */
 
   /* Configure the system clock */

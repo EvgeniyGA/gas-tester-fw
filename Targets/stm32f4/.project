@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>aero-tester-f4</name>
+	<name>gas-tester</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -34,6 +34,11 @@
 			<name>App</name>
 			<type>2</type>
 			<locationURI>PARENT-2-PROJECT_LOC/App</locationURI>
+		</link>
+		<link>
+			<name>RTT</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/modules/RTT</locationURI>
 		</link>
 		<link>
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.c</name>

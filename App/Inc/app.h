@@ -15,6 +15,7 @@ extern "C" {
 #define MAIN_FREQENCY_HZ				(10000)
 #define MAIN_TIME_RESOLUTION			(64)
 
+
 #ifdef __cplusplus
 }
 #endif
