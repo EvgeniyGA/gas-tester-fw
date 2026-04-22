@@ -36,6 +36,11 @@
 			<locationURI>PARENT-2-PROJECT_LOC/App</locationURI>
 		</link>
 		<link>
+			<name>RTT</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/modules/RTT</locationURI>
+		</link>
+		<link>
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c</locationURI>

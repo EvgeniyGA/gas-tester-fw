@@ -85,6 +85,7 @@ void Error_Handler(void);
 #define spi1_cs_b_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
+void init(void);
 void setup(void);
 void loop(void);
 /* USER CODE END Private defines */

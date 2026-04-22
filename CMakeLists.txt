@@ -29,6 +29,7 @@ target_include_directories(${MAIN_EXECUTABLE} PRIVATE
 set(TARGET_CMAKE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Targets/${TARGET}/cmake/stm32cubemx")
 
 add_subdirectory("App")
+add_subdirectory(RTT)
 add_subdirectory("${TARGET_CMAKE_DIR}" "${CMAKE_BINARY_DIR}/stm32cubemx_${TARGET}")
 #set(LINKER_SCRIPT_PATH "${CMAKE_SOURCE_DIR}/Targets/${TARGET}/STM32F407XX_FLASH.ld")
 

@@ -6,4 +6,5 @@ target_sources(${PROJECT_NAME} PRIVATE
     Src/wave_gen.c
     Src/wave_measure.c
     Src/wave_starter.c
+    Src/syscalls.c
 )
