@@ -97,14 +97,14 @@
 # see documentation for the many options for specifying this.
 :paths:
   :test:
-    - +:test/**
-    - -:test/support
+    - +:test/ceedling/**
+    - -:test/ceedling/support
   :source:
-    - src/**
+    - App/Src/**
   :include:
-    - src/** # In simple projects, this entry often duplicates :source
+    - App/Inc/** # In simple projects, this entry often duplicates :source
   :support:
-    - test/support
+    - test/ceedling/support
   :libraries: []
 
 # You can even specify specific files to add or remove from your test
@@ -146,6 +146,8 @@
   :plugins:                        # What plugins should be used by CMock?
     - :ignore
     - :callback
+    - :expect_any_args
+    - :return_thru_ptr
   :verbosity:  2                   # the options being 0 errors only, 1 warnings and errors, 2 normal info, 3 verbose
   :when_no_prototypes:  :warn      # the options being :ignore, :warn, or :erro
 
