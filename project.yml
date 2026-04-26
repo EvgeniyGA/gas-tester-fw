@@ -223,7 +223,8 @@
   :placement: :end
   :flag: "-l${1}"
   :path_flag: "-L ${1}"
-  :system: []    # for example, you might list 'm' to grab the math library
+  :system:
+    - m  # Links libm for mathematical functions
   :test: []
   :release: []
 
