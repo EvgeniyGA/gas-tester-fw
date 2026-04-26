@@ -1,0 +1,4 @@
+# docker/Dockerfile
+FROM throwtheswitch/madsciencelab-plugins:1.0.0 AS base
+
+WORKDIR /home/dev
