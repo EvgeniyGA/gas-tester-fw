@@ -12,3 +12,4 @@ Targets/stm32f4/aero-tester-f4.launch
 /.cache
 .cortex-debug
 /.local
+/Targets/stm32f4/build
