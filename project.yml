@@ -56,7 +56,7 @@
   :enabled:
     #- beep                           # beeps when finished, so you don't waste time waiting for ceedling
     - module_generator                # handy for quickly creating source, header, and test templates
-    #- gcov                           # test coverage using gcov. Requires gcc, gcov, and a coverage analyzer like gcovr
+    - gcov                           # test coverage using gcov. Requires gcc, gcov, and a coverage analyzer like gcovr
     #- bullseye                       # test coverage using bullseye. Requires bullseye for your platform
     #- command_hooks                  # write custom actions to be called at different points during the build process
     #- compile_commands_json_db       # generate a compile_commands.json file
@@ -68,7 +68,7 @@
     #- report_build_warnings_log
     #- report_tests_gtestlike_stdout
     #- report_tests_ide_stdout
-    #- report_tests_log_factory
+    - report_tests_log_factory
     - report_tests_pretty_stdout
     #- report_tests_raw_output_log
     #- report_tests_teamcity_stdout
@@ -97,14 +97,14 @@
 # see documentation for the many options for specifying this.
 :paths:
   :test:
-    - +:test/ceedling/**
-    - -:test/ceedling/support
+    - +:test/unit/**
+    - -:test/unit/support
   :source:
     - App/Src/**
   :include:
     - App/Inc/** # In simple projects, this entry often duplicates :source
   :support:
-    - test/ceedling/support
+    - test/unit/support
   :libraries: []
 
 # You can even specify specific files to add or remove from your test
