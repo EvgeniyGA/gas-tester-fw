@@ -1,3 +1,5 @@
 {
-    "cmake.sourceDirectory": "C:/Projects/gas-tester-fw/Targets/stm32f4"
+    "cmake.sourceDirectory": "C:/Projects/gas-tester-fw/Targets/stm32f4",
+    "ceedlingExplorer.projectPath": "./",
+    "ceedlingExplorer.debugConfiguration": "Ceedling debug",
 }
