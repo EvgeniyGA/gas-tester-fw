@@ -10,3 +10,4 @@ Targets/stm32f4/aero-tester-f4.launch
 .devcontainer/.postCreateCommandMarker
 .devcontainer/.updateContentCommandMarker
 /.cache
+.cortex-debug
