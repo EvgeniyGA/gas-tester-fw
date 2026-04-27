@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Main",
+            "includePath": ["${workspaceFolder}/**"],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "intelliSenseMode": "linux-gcc-x64"
+        },
+        {
+            "name": "Test",
+            "includePath": ["${workspaceFolder}/**"],
+            "defines": ["TEST", "UNITY", "TEST_BUILD"],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
