@@ -61,3 +61,46 @@ jobs:
         output: "both"
     - name: Write coverage to Job Summary
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
+
+  # 🚀 DEPLOY: Публикация бейджа и HTML-отчёта на GitHub Pages
+  deploy-coverage:
+    needs: unit-tests
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      contents: write  # ← нужно для деплоя в gh-pages
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Download coverage artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: gcov-report
+          path: ./gcov-report
+
+      - name: Deploy coverage badge
+        run: |
+          # Копируем бейдж в папку badges/
+          mkdir -p gh-pages/badges
+          find ./gcov-report -name "coverage-badge.svg" -exec cp {} gh-pages/badges/ \; || true
+          
+          # Копируем весь HTML-отчёт в coverage/
+          mkdir -p gh-pages/coverage
+          cp -r ./gcov-report/* gh-pages/coverage/ 2>/dev/null || true
+          
+          # Коммитим изменения
+          cd gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "📊 Update coverage report [skip ci]" || exit 0
+          git push
+
+      - name: Update README badge URL (опционально)
+        run: |
+          # Если хочешь, чтобы бейдж всегда вёл на актуальный отчёт
+          echo "Badge URL: https://raw.githubusercontent.com/${{ github.repository }}/gh-pages/badges/coverage-badge.svg"
