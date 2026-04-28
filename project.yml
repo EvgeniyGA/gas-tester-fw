@@ -268,8 +268,6 @@
     # :html_title: Test Coverage Report
     :html_medium_threshold: 75
     :html_high_threshold: 90
-    :gcov_executable: gcov-11
-    :report_include: "^src"
     # :html_absolute_paths: TRUE
     # :html_encoding: UTF-8
 
