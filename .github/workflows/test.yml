@@ -1,0 +1,37 @@
+name: Ceedling Test and Code Coverage
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build test container
+      run: docker compose build ceedling-tests
+
+    - name: Run Ceedling tests
+      run: docker compose run --rm ceedling-tests ceedling test:all
+
+    - name: Run coverage (gcov)
+      run: docker compose run --rm ceedling-tests ceedling gcov:all
+
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: gcov-report
+        path: build/artifacts/gcov/
+        retention-days: 7
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: build/artifacts/report/
+        retention-days: 7
