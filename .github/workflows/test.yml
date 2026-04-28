@@ -1,5 +1,10 @@
 name: Ceedling Test and Code Coverage
 
+permissions:
+  checks: write      # for JUnit-report
+  contents: read     # for checkout
+  actions: read      # for upload-artifact
+
 on:
   push:
   pull_request:
