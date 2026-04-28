@@ -1,5 +1,6 @@
 services:
   ceedling-tests:
+    user: root
     build:
       context: .
       dockerfile: Dockerfile.ceedling-tests
