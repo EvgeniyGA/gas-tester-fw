@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     permissions:
-      contents: write  # ← нужно для деплоя в gh-pages
+      contents: write
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
