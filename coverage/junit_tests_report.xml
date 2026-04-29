@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<testsuites tests="2" failures="0" time="0.003">
+  <testsuite name="test/unit/test_wave_gen" tests="2" failures="0" skipped="0" errors="0" time="0.003">
+    <testcase name="test_wave_gen_simple" time="0.000"/>
+    <testcase name="test_wave_gen_periodic" time="0.000"/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,24 @@
+{
+  "FailedTests": [
+
+  ],
+  "PassedTests": [
+    {
+      "file": "test/unit/test_wave_gen.c",
+      "test": "test_wave_gen_simple"
+    },
+    {
+      "file": "test/unit/test_wave_gen.c",
+      "test": "test_wave_gen_periodic"
+    }
+  ],
+  "IgnoredTests": [
+
+  ],
+  "Summary": {
+    "total_tests": 2,
+    "passed": 2,
+    "ignored": 0,
+    "failures": 0
+  }
+}
