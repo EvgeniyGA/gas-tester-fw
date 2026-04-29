@@ -62,7 +62,6 @@ jobs:
     - name: Write coverage to Job Summary
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
 
-  # 🚀 DEPLOY: Публикация бейджа и HTML-отчёта на GitHub Pages
   deploy-coverage:
     needs: unit-tests
     runs-on: ubuntu-latest
