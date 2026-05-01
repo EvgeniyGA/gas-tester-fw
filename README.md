@@ -2,8 +2,6 @@
 
 # Gas Tester Firmware
 
-![CI](https://github.com/EvgeniyGA/gas-tester-fw/actions/workflows/ceedling.yml/badge.svg)
-![Coverage](https://raw.githubusercontent.com/EvgeniyGA/gas-tester-fw/gh-pages/badges/coverage-badge.svg)
-![Tests](https://img.shields.io/badge/tests-42%20passed-brightgreen)
+[![ceedling-unit-tests](https://github.com/EvgeniyGA/gas-tester-fw/actions/workflows/ceedling-test.yml/badge.svg?branch=main)](https://github.com/EvgeniyGA/gas-tester-fw/actions/workflows/ceedling-test.yml)
+[![codecov](https://codecov.io/gh/EvgeniyGA/gas-tester-fw/branch/main/graph/badge.svg)](https://codecov.io/gh/EvgeniyGA/gas-tester-fw)
 
-📊 [View detailed coverage report](https://evgeniyga.github.io/gas-tester-fw/coverage/)
