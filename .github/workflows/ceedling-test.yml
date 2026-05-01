@@ -62,9 +62,7 @@ jobs:
     - name: Write coverage to Job Summary
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v5
       with:
-        directory: ./tools/ceedling/gcov
-        flags: unittests # optional
-        name: codecov-rkh
+        token: ${{ secrets.CODECOV_TOKEN }}
