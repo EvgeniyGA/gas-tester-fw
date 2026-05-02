@@ -3,7 +3,6 @@
 # This makefile requires an ANSI compatible C compiler bison and flex.
 #
 
-
 source_dir="../../source"
 uno_dir="tools/analyzer"
 
