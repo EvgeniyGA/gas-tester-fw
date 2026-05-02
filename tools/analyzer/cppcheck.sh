@@ -11,6 +11,7 @@
 #   sm/src/rkhsm.c sma/src/rkhsma.c tmr/src/rkhtmr.c trc/src/rkhtrc_*.c
 #
 
+
 source_dir="../../source"
 cppcheck_dir="tools/analyzer"
 modules="fwk mempool queue sm sma tmr trc"
