@@ -34,8 +34,8 @@ void test_wave_gen_low_frew(void){
 		.timer_frequency = DAC_TIMER_FREQENCY_MHZ*1000000
 	};
 	wave_config.freq = 1;
-	uint8_t ret = initWaveMas(&wave_config);
-	TEST_ASSERT_NOT_EQUAL_UINT8(ret, 0);
+	int8_t ret = initWaveMas(&wave_config);
+	TEST_ASSERT_NOT_EQUAL_INT8(ret, 0);
 }
 
 void test_wave_gen_wrongs(void){
@@ -54,18 +54,18 @@ void test_wave_gen_wrongs(void){
 		.timer_frequency = DAC_TIMER_FREQENCY_MHZ*1000000
 	};
 
-	uint8_t ret = initWaveMas(&wave_config);
-	TEST_ASSERT_NOT_EQUAL_UINT8(ret, 0);
+	int8_t ret = initWaveMas(&wave_config);
+	TEST_ASSERT_NOT_EQUAL_INT8(ret, 0);
 
 	wave_config.freq = 1000;
 	wave_config.numb_of_steps = 0;
 	ret = initWaveMas(&wave_config);
-	TEST_ASSERT_NOT_EQUAL_UINT8(ret, 0);
+	TEST_ASSERT_NOT_EQUAL_INT8(ret, 0);
 
 	wave_config.numb_of_steps = DAC_TIME_RESOLUTION;
 	wave_config.timer_frequency = 0;
 	ret = initWaveMas(&wave_config);
-	TEST_ASSERT_NOT_EQUAL_UINT8(ret, 0);
+	TEST_ASSERT_NOT_EQUAL_INT8(ret, 0);
 }
 
 void test_wave_gen_amplitudes(void)
@@ -86,13 +86,13 @@ void test_wave_gen_amplitudes(void)
 	};
 
 	wave_config.amplitude = 1.6;
-	uint8_t ret = initWaveMas(&wave_config);
-	TEST_ASSERT_NOT_EQUAL_UINT8(ret, 0);
+	int8_t ret = initWaveMas(&wave_config);
+	TEST_ASSERT_NOT_EQUAL_INT8(ret, 0);
 
 	wave_config.amplitude = 1.5;
 	wave_config.midpoint = 1.4;
 	ret = initWaveMas(&wave_config);
-	TEST_ASSERT_NOT_EQUAL_UINT8(ret, 0);
+	TEST_ASSERT_NOT_EQUAL_INT8(ret, 0);
 }
 
 void test_wave_gen_simple(void)

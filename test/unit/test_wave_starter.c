@@ -34,6 +34,8 @@ int dac_start_StubCallback(uint16_t* buf, uint32_t size, uint16_t arr) {
 void test_wave_starter_basic(void)
 {
 	wave_config.fun = cosf;
+    wave_config.freq = 1000;
+    wave_config.numb_of_steps = WAVE_TIME_RESOLUTION;
 	wave_starter_init(&wave_config);
 
 //	dac_start_ExpectAndReturn(wave_config.buf, 200, 0);
@@ -44,7 +46,16 @@ void test_wave_starter_basic(void)
 //	dac_start_IgnoreAndReturn(0);
 	dac_start_StubWithCallback(dac_start_StubCallback);
 
-	//TEST_ASSERT_EQUAL_INT32(0, wave_starter_run(&wave_config));
+	TEST_ASSERT_EQUAL_INT8(0, wave_starter_run(&wave_config));
+}
+
+void test_wave_starting_wrong_initials(void){
+    wave_config.fun = cosf;
+    wave_config.freq = 1000;
+    wave_config.numb_of_steps = 0;
+	wave_starter_init(&wave_config);
+    dac_start_StubWithCallback(dac_start_StubCallback);
+    TEST_ASSERT_NOT_EQUAL_INT8(0, wave_starter_run(&wave_config));
 }
 
 #endif // TEST

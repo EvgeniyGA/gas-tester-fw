@@ -13,6 +13,7 @@ int wave_starter_init(waveGenConfig_s* config){
 	config->amplitude = 1.3;
 	config->midpoint = 1.5;
 	config->buf = dac_dma_buff;
+	//config->numb_of_steps = WAVE_TIME_RESOLUTION;
 	config->dac_resolution = 12;
 	config->dac_reference = 3;
 	config->timer_frequency = DAC_TIMER_FREQENCY_MHZ*1000000;
