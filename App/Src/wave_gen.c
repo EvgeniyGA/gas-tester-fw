@@ -20,11 +20,13 @@ int initWaveMas(waveGenConfig_s* config){
 		return -1;
 	}
 
-	config->timer_arr =  config->timer_frequency / (config->numb_of_steps * config->freq);;
+	uint64_t tmp =  (uint64_t)config->timer_frequency / ((uint64_t)config->numb_of_steps * (uint64_t)config->freq);
 
-	if(config->timer_arr > 0xFFFF || config->timer_arr < 1){
+	if(tmp > 0xFFFF){
 		return -1;
 	}
+
+	config->timer_arr = tmp;
 
 	if((config->midpoint + config->amplitude > config->dac_reference) ||
 	   (config->midpoint < config->amplitude)){
