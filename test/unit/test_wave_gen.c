@@ -1,11 +1,15 @@
 
 #ifdef TEST
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "unity.h"
-
 #include "wave_gen.h"
 #include <string.h>
-
+#ifdef __cplusplus
+}
+#endif
 void setUp(void)
 {
 }
@@ -16,7 +20,7 @@ void tearDown(void)
 
 void test_wave_gen_simple(void)
 {
-	uint16_t DAC_TIME_RESOLUTION = 128;
+	const uint16_t DAC_TIME_RESOLUTION = 128;
 	uint16_t dac_buf[DAC_TIME_RESOLUTION];
 	memset(dac_buf, 0x00, DAC_TIME_RESOLUTION);
 	waveGenConfig_s wave_config = {
