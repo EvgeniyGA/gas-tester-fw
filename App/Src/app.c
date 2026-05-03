@@ -44,6 +44,6 @@ void setup(void){
 void loop(void){
 	int res = check_adc_result(&wave_measure_config);
 	if(!res){
-		dbgln("OK");
+		dbgln("OK!");
 	}
 }

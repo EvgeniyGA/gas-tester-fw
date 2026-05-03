@@ -10,6 +10,6 @@
 
 #include <stdint.h>
 
-int adc_driver_start(uint16_t* buff, uint16_t size);
+uint8_t adc_driver_start(uint16_t* buff, uint16_t size);
 
 #endif /* INC_ADC_DRIVER_H_ */

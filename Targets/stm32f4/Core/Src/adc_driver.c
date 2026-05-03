@@ -11,7 +11,7 @@
 #include "tim.h"
 #include "wave_measure.h"
 
-int adc_driver_start(uint16_t* buff, uint16_t size){
+uint8_t adc_driver_start(uint16_t* buff, uint16_t size){
 	if(!size){
 		return -1;
 	}

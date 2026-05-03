@@ -24,7 +24,6 @@ void tearDown(void)
 }
 
 int dac_start_StubCallback(uint16_t* buf, uint32_t size, uint16_t arr) {
-    // Тут проверяешь, что пришло
     TEST_ASSERT_NOT_NULL(buf);
     TEST_ASSERT_GREATER_THAN(0, size);
     //TEST_ASSERT_EQUAL_INT(size,  1 / (wave_config.time_step * wave_config.freq));

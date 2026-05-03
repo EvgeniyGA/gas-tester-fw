@@ -19,7 +19,13 @@ file(GLOB_RECURSE APP_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/App/src/*.cpp"
 )
 
+set(STM32_Drivers_Src
+    ${CMAKE_CURRENT_SOURCE_DIR}/Targets/stm32f4/Core/Src/adc_driver.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Targets/stm32f4/Core/Src/dac_driver.c
+)
+
 target_sources(${MAIN_EXECUTABLE} PRIVATE ${APP_SOURCES})
+target_sources(${MAIN_EXECUTABLE} PRIVATE ${STM32_Drivers_Src})
 
 target_include_directories(${MAIN_EXECUTABLE} PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/App/inc"
