@@ -26,12 +26,13 @@
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
-#include "usb_device.h"
+#include "usb_otg.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "usbd_cdc_if.h"
+#include "tusb.h"
+#include <ctype.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,6 +48,101 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
+// echo to either Serial0 or Serial1
+// with Serial0 as all lower case, Serial1 as all upper case
+static void echo_serial_port(uint8_t itf, uint8_t buf[], uint32_t count) {
+  uint8_t const case_diff = 'a' - 'A';
+
+  for (uint32_t i = 0; i < count; i++) {
+    if (itf == 0) {
+      // echo back 1st port as lower case
+      if (isupper(buf[i])) {
+        buf[i] += case_diff;
+      }
+    } else {
+      // echo back 2nd port as upper case
+      if (islower(buf[i])) {
+        buf[i] -= case_diff;
+      }
+    }
+
+    tud_cdc_n_write_char(itf, buf[i]);
+  }
+  tud_cdc_n_write_flush(itf);
+}
+
+
+// Invoked when device is mounted
+void tud_mount_cb(void) {
+  //Do nothing for now
+}
+
+// Invoked when device is unmounted
+void tud_umount_cb(void) {
+  //Do nothing for now
+}
+
+/*size_t board_get_unique_id(uint8_t id[], size_t max_len) {
+  (void) max_len;
+  volatile uint32_t *stm32_uuid = (volatile uint32_t *) UID_BASE;
+  uint32_t *id32 = (uint32_t *) (uintptr_t) id;
+  uint8_t const len = 12;
+
+  id32[0] = stm32_uuid[0];
+  id32[1] = stm32_uuid[1];
+  id32[2] = stm32_uuid[2];
+
+  return len;
+}*/
+
+static void cdc_task(void) {
+  for (uint8_t itf = 0; itf < CFG_TUD_CDC; itf++) {
+    // connected() check for DTR bit
+    // Most but not all terminal client set this when making connection
+    // if ( tud_cdc_n_connected(itf) )
+    {
+      if (tud_cdc_n_available(itf)) {
+        uint8_t buf[64];
+        uint32_t count = tud_cdc_n_read(itf, buf, sizeof(buf));
+
+        // echo back to both serial ports
+        echo_serial_port(0, buf, count);
+        echo_serial_port(1, buf, count);
+      }
+
+      // Press on-board button to send Uart status notification
+      /*static uint32_t btn_prev = 0;
+      static cdc_notify_uart_state_t uart_state = { .value = 0 };
+      const uint32_t btn = board_button_read();
+      if (!btn_prev && btn) {
+        uart_state.dsr ^= 1;
+        tud_cdc_notify_uart_state(&uart_state);
+      }
+      btn_prev = btn;*/
+    }
+  }
+}
+
+
+void tud_cdc_line_state_cb(uint8_t instance, bool dtr, bool rts) {
+  (void)rts;
+
+  // DTR = false is counted as disconnected
+  if (!dtr) {
+    // touch1200 only with first CDC instance (Serial)
+    if (instance == 0) {
+      cdc_line_coding_t coding;
+      tud_cdc_get_line_coding(&coding);
+      if (coding.bit_rate == 1200) {
+        //board_reset_to_bootloader();
+      }
+    }
+  }
+}
+
+
+
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -57,7 +153,7 @@ int _write(int fd, char *ptr, int len) {
 
     if (fd == 1 || fd == 2) {
         //hstatus = HAL_UART_Transmit(&huart1, (uint8_t*) ptr, len, HAL_MAX_DELAY);
-        hstatus = CDC_Transmit_FS((uint8_t*) ptr, len);
+        //hstatus = CDC_Transmit_FS((uint8_t*) ptr, len);
         if (hstatus == HAL_OK)
             return len;
         else
@@ -109,7 +205,6 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_DAC_Init();
-  MX_USB_DEVICE_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
   MX_CAN1_Init();
@@ -123,7 +218,9 @@ int main(void)
   MX_USART3_UART_Init();
   MX_USART6_UART_Init();
   MX_TIM8_Init();
+  MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
+  tud_init(BOARD_TUD_RHPORT);
   setup();
   /* USER CODE END 2 */
 
@@ -131,6 +228,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  tud_task();
+	  //tud_cdc_write_flush();
+	  cdc_task();
 	  loop();
     /* USER CODE END WHILE */
 

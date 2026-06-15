@@ -11,7 +11,7 @@
 #include "adc_driver.h"
 #include "math.h"
 #include "arm_math.h"
-#include "usbd_cdc_if.h"
+//#include "usbd_cdc_if.h"
 
 #define VREFINT_CAL_VREF_MV                   ( 3300UL)
 #define VREFINT_CAL_ADDR_MV                   ((uint16_t*) (0x1FFF7A2AU))

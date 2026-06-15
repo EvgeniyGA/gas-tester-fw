@@ -41,6 +41,11 @@
 			<locationURI>PARENT-2-PROJECT_LOC/modules/RTT</locationURI>
 		</link>
 		<link>
+			<name>src</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/modules/tinyusb/src</locationURI>
+		</link>
+		<link>
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c</locationURI>
@@ -174,26 +179,6 @@
 			<name>Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_usb.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/USB_Device_Library/usbd_cdc.c</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/USB_Device_Library/usbd_core.c</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/USB_Device_Library/usbd_ctlreq.c</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/USB_Device_Library/usbd_ioreq.c</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/Users/evgeny/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.3/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/CMSIS-DSP/CMSIS/DSP/Source/BasicMathFunctions.c</name>

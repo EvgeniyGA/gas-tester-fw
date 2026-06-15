@@ -13,7 +13,7 @@
 #include "arm_math.h"
 #include "wave_starter.h"
 #include "wave_measure.h"
-#include "usbd_cdc_if.h"
+//#include "usbd_cdc_if.h"
 #include "SEGGER_RTT.h"
 
 #define dbg(s)                        SEGGER_RTT_WriteString( 0, s )//; HAL_Delay(1)
