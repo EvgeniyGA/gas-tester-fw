@@ -37,7 +37,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+void cdc_task(void);
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -47,101 +47,6 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
-// echo to either Serial0 or Serial1
-// with Serial0 as all lower case, Serial1 as all upper case
-static void echo_serial_port(uint8_t itf, uint8_t buf[], uint32_t count) {
-  uint8_t const case_diff = 'a' - 'A';
-
-  for (uint32_t i = 0; i < count; i++) {
-    if (itf == 0) {
-      // echo back 1st port as lower case
-      if (isupper(buf[i])) {
-        buf[i] += case_diff;
-      }
-    } else {
-      // echo back 2nd port as upper case
-      if (islower(buf[i])) {
-        buf[i] -= case_diff;
-      }
-    }
-
-    tud_cdc_n_write_char(itf, buf[i]);
-  }
-  tud_cdc_n_write_flush(itf);
-}
-
-
-// Invoked when device is mounted
-void tud_mount_cb(void) {
-  //Do nothing for now
-}
-
-// Invoked when device is unmounted
-void tud_umount_cb(void) {
-  //Do nothing for now
-}
-
-/*size_t board_get_unique_id(uint8_t id[], size_t max_len) {
-  (void) max_len;
-  volatile uint32_t *stm32_uuid = (volatile uint32_t *) UID_BASE;
-  uint32_t *id32 = (uint32_t *) (uintptr_t) id;
-  uint8_t const len = 12;
-
-  id32[0] = stm32_uuid[0];
-  id32[1] = stm32_uuid[1];
-  id32[2] = stm32_uuid[2];
-
-  return len;
-}*/
-
-static void cdc_task(void) {
-  for (uint8_t itf = 0; itf < CFG_TUD_CDC; itf++) {
-    // connected() check for DTR bit
-    // Most but not all terminal client set this when making connection
-    // if ( tud_cdc_n_connected(itf) )
-    {
-      if (tud_cdc_n_available(itf)) {
-        uint8_t buf[64];
-        uint32_t count = tud_cdc_n_read(itf, buf, sizeof(buf));
-
-        // echo back to both serial ports
-        echo_serial_port(0, buf, count);
-        echo_serial_port(1, buf, count);
-      }
-
-      // Press on-board button to send Uart status notification
-      /*static uint32_t btn_prev = 0;
-      static cdc_notify_uart_state_t uart_state = { .value = 0 };
-      const uint32_t btn = board_button_read();
-      if (!btn_prev && btn) {
-        uart_state.dsr ^= 1;
-        tud_cdc_notify_uart_state(&uart_state);
-      }
-      btn_prev = btn;*/
-    }
-  }
-}
-
-
-void tud_cdc_line_state_cb(uint8_t instance, bool dtr, bool rts) {
-  (void)rts;
-
-  // DTR = false is counted as disconnected
-  if (!dtr) {
-    // touch1200 only with first CDC instance (Serial)
-    if (instance == 0) {
-      cdc_line_coding_t coding;
-      tud_cdc_get_line_coding(&coding);
-      if (coding.bit_rate == 1200) {
-        //board_reset_to_bootloader();
-      }
-    }
-  }
-}
-
-
-
 
 /* USER CODE END PM */
 
@@ -285,6 +190,99 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+//--------------------------------------------------------------------+
+// Device callbacks
+//--------------------------------------------------------------------+
+
+// Invoked when device is mounted
+void tud_mount_cb(void) {
+}
+
+// Invoked when device is unmounted
+void tud_umount_cb(void) {
+}
+
+// Invoked when usb bus is suspended
+// remote_wakeup_en : if host allow us  to perform remote wakeup
+// Within 7ms, device must draw an average of current less than 2.5 mA from bus
+void tud_suspend_cb(bool remote_wakeup_en) {
+  (void)remote_wakeup_en;
+}
+
+// Invoked when usb bus is resumed
+void tud_resume_cb(void) {
+//  blink_interval_ms = tud_mounted() ? BLINK_MOUNTED : BLINK_NOT_MOUNTED;
+}
+
+
+//--------------------------------------------------------------------+
+// USB CDC
+//--------------------------------------------------------------------+
+void cdc_task(void) {
+  // connected() check for DTR bit
+  // Most but not all terminal client set this when making connection
+  // if ( tud_cdc_connected() )
+  {
+    // connected and there are data available
+    if (tud_cdc_available()) {
+      // read data
+      char     buf[64];
+      uint32_t count = tud_cdc_read(buf, sizeof(buf));
+      (void)count;
+
+      // Echo back
+      // Note: Skip echo by commenting out write() and write_flush()
+      // for throughput test e.g
+      //    $ dd if=/dev/zero of=/dev/ttyACM0 count=10000
+      tud_cdc_write(buf, count);
+      tud_cdc_write_flush();
+    }
+
+    // Press on-board button to send Uart status notification
+    static cdc_notify_uart_state_t uart_state = {.value = 0};
+
+    static uint32_t btn_prev = 0;
+    const uint32_t  btn      = 0;//board_button_read();
+
+    if ((btn_prev == 0u) && (btn != 0u)) {
+      uart_state.dsr ^= 1;
+      uart_state.dcd ^= 1;
+      //tud_cdc_notify_uart_state(&uart_state);
+    }
+    btn_prev = btn;
+  }
+}
+
+// Invoked when cdc when line state changed e.g connected/disconnected
+void tud_cdc_line_state_cb(uint8_t itf, bool dtr, bool rts) {
+  (void)itf;
+  (void)rts;
+
+  if (dtr) {
+    // Terminal connected
+  } else {
+    // Terminal disconnected
+  }
+}
+
+// Invoked when CDC interface received data from host
+void tud_cdc_rx_cb(uint8_t itf) {
+  (void)itf;
+}
+
+size_t board_get_unique_id(uint8_t id[], size_t max_len) {
+  (void) max_len;
+  volatile uint32_t *stm32_uuid = (volatile uint32_t *) UID_BASE;
+  uint32_t *id32 = (uint32_t *) (uintptr_t) id;
+  uint8_t const len = 12;
+
+  id32[0] = stm32_uuid[0];
+  id32[1] = stm32_uuid[1];
+  id32[2] = stm32_uuid[2];
+
+  return len;
+}
+
 
 /* USER CODE END 4 */
 
